@@ -18,7 +18,9 @@ decode.py
   some stuff
   
 btpc.py
-  some stuff
+  Contains block product turbo code generators, extractors and related routines
+  
+    - decode_full_lc(_data) -- Extracts the useful LC data without checking for errors. Accepts one arguments of type bitarray and returns one item of type bitarray
   
 crc.py
   some stuff
