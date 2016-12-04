@@ -19,7 +19,7 @@
 ###############################################################################
 
 from __future__ import print_function
-
+from bitarray import bitarray
 from binascii import b2a_hex as ahex
 
 # Does anybody read this stuff? There's a PEP somewhere that says I should do this.
@@ -252,6 +252,8 @@ def encode_2087(_data):
 #------------------------------------------------------------------------------
 
 if __name__ == '__main__':
+
+    from time import time
     
     # For testing the code
     def print_hex(_list):
