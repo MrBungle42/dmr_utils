@@ -51,10 +51,14 @@ btpc.py
 - **encode_emblc(_lc):** Accepts 12 byte LC as a string, adds 5-byte checksum, adds row hamming bits, column partiy bits and arranges the matrix for transmission. Returns a type dict with 4 key/value pairs. Keys 1-4 are DMR bursts b-e respectively, such that burst "B" is key 1's associated value and so on.
   
 crc.py
-  some stuff
+  CRC calculator. So far, only one CRC calculation here.
+  
+- **csum5(_data):** Create a 5-bit CRC from the supplied *_data*, which is assumed to be an LC string. Returns a 5-bit bitarray.
   
 rs129.py
-  some stuff
+  Reed Solomon 12,9,3 ECC FEC encoder/decoder. Some methods are not listed here if they are intended to be used only within the module.
+  
+- **encode(_msg):** 
   
 golay.py
   some stuff
