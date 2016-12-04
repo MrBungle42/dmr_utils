@@ -50,10 +50,14 @@ rs129.py
 - **lc_terminator_encode(_message):** Accepts a 9-byte LC message. Calculates and returns the 3 byte hex string Reed Solomon 12,9,3 ECC with the voice terminator mask applied.
   
 golay.py
-  some stuff
+  There is nothing in this file yet.
   
 hamming.py
-  some stuff
+  Hamming codes necessary for working with DMR. At least some of them, that is.
+  
+- **enc_15113(_data):** Accepts a type bitarray, *_data* and returns a bitarray of length 4 with the hamming 15,11,3 checksum.
+- **enc_1393(_data):** Accepts a type bitarray, *_data* and returns a bitarray of length 4 with the hamming 13,9,3 checksum.
+- **enc_16114(_data):** Accepts a type bitarray, *_data* and returns a bitarray of length 5 with the hamming 16,11,4 checksum.
   
 qr.py
-  some stuff
+  Quadratic Residue FEC for use in generating EMB data. In reality, the EMB can be generated from a lookup table more effectively than calcuating the QR FEC and creating the EMB from scratch because in amateur radio use (as of today) only a limited number of EMBs will actually ever be used. Routines here have not been completed for this reason, but may be some day.
