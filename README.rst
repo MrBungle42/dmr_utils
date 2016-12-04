@@ -50,10 +50,13 @@ rs129.py
 - **lc_terminator_encode(_message):** Accepts a 9-byte LC message. Calculates and returns the 3 byte hex string Reed Solomon 12,9,3 ECC with the voice terminator mask applied.
   
 golay.py
-  There is nothing in this file yet.
+  Golcay codes necessary for working with DMR. At least some of them, that is. These are generally used by other modules, not directly.
+  
+- **encode_2087(_data):** Accepts 1-byte integer and returns a Golay 20,8,7 encoded 2-byte hex string.
+- **decode_2087(_data):** Accepts a 3-byte hex string and returns a one-byte Golay 20,8,7 decoded integer.
   
 hamming.py
-  Hamming codes necessary for working with DMR. At least some of them, that is.
+  Hamming codes necessary for working with DMR. At least some of them, that is. These ar generally used by other modules, not directly.
   
 - **enc_15113(_data):** Accepts a type bitarray, *_data* and returns a bitarray of length 4 with the hamming 15,11,3 checksum.
 - **enc_1393(_data):** Accepts a type bitarray, *_data* and returns a bitarray of length 4 with the hamming 13,9,3 checksum.
