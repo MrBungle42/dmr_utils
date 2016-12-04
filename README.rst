@@ -6,13 +6,29 @@ Utilities for working with Digital Moble Radio (DMR) in python. Includes routine
 **Files in this repository and what they do**
 
 const.py
-  some stuff
+  A number of constant values that are handy for working with DMR. Just look through the file. Some are hex strings, some are bitarrays. Some are straight objects, and in cases where there are related data sets you'll find dictionaries.
   
 utils.py
-  some stuff
+  There are currently two parts of utils.py. One part is about converting integer an hex values (usually radio and group IDs, etc.) back and forth. Radio IDs, etc. are always transmitted and recieved as hex strings, but that makes them hard to work with in other ways. The other part is about creating dictionaries that can be used to lookup subscriber, peer, and talkgroup IDs and turn them into friendly names.
+  
+- **hex_str_2(_int_id):** Returns a 2-byte (with leading zeros) hex string representation of a 2-byte *_int_id*.
+
+- **hex_str_3(_int_id):** Returns a 3-byte (with leading zeros) hex string representation of a 3-byte *_int_id*.
+
+- **hex_str_4(_int_id):** Returns a 4-byte (with leading zeros) hex string representation of a 4-byte *_int_id*.
+
+- **int_id(_hex_string):** Returns an integer version of a supplied *_hex_string*.
+  
+- **try_download(_path, _file, _url, _stale):** Download a new *_file* from *_url* and save it at the right *_path* if the existing file isn't there or is older than *_stale* in seconds. It is expected that this is a .csv file downloaded from DMR-MARC.
+
+- **mk_id_dict(_path, _file:** Make an ID dictionary from the *_file* located on the *_path*. Returns a dictionary.
+
+- **get_info(_id, _dict):** Get the *_id* from the *_dict*, where *_id* is expected to be an integer. Returns an integer.
+
+- **get_alias(_id, _dict):** Get the *_id* from the *_dict*, where *_id* is a hex string. Returns an integer.
   
 encode.py
-  some stuff
+  There is nothing in this file yet.
   
 decode.py
   some stuff
