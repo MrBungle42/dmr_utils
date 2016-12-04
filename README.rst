@@ -58,7 +58,9 @@ crc.py
 rs129.py
   Reed Solomon 12,9,3 ECC FEC encoder/decoder. Some methods are not listed here if they are intended to be used only within the module.
   
-- **encode(_msg):** 
+- **encode(_msg):** Accepts *_msg*, a 9-byte hex string and returns a type list of 3 parity bytes.
+- **lc_header_encode(_message):** Accepts a 9-byte LC message. Calculates and returns the 3 byte hex string Reed Solomon 12,9,3 ECC with the voice header mask applied.
+- **lc_terminator_encode(_message):** Accepts a 9-byte LC message. Calculates and returns the 3 byte hex string Reed Solomon 12,9,3 ECC with the voice terminator mask applied.
   
 golay.py
   some stuff
