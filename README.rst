@@ -20,7 +20,7 @@ decode.py
 btpc.py
   Contains block product turbo code generators, extractors and related routines
   
-- *decode_full_lc(_data):* Extracts the useful FULL LC data without checking for errors. Accepts one argument of type bitarray and returns one item of type bitarray.
+- **decode_full_lc(_data):** Extracts the useful FULL LC data without checking for errors. Accepts one argument of type bitarray and returns one item of type bitarray.
 
 - **interleave_19696(_data):** Accepts one argument of type bitarray and returns a bitarray interlieaved.
 
