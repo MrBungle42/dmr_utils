@@ -4,6 +4,7 @@ _________
 Utilities for working with Digital Moble Radio (DMR) in python. Includes routines for assembling and disasembling packets and encoding/removing FEC/ECC routines. The utilities are intended primarily for processing on the "network" side of DMR, not the air interface -- such as for building network linking tools, and as such, routines mostly remove FEC/ECC rather than appy repeairs, which should be done at the air interface first.
 
 **Files in this repository and what they do**
+
 const.py
   A number of constant values that are handy for working with DMR. Just look through the file. Some are hex strings, some are bitarrays. Some are straight objects, and in cases where there are related data sets you'll find dictionaries.
 
