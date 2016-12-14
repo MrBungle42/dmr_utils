@@ -27,10 +27,6 @@ setup(name='dmr_utils',
       install_requires=['bitarray'],
       license='GPLv3',
       url='https://github.com/n0mjs710/dmr_utils',
-      packages=find_packages(),
-      entry_points={
-              'console_scripts': [
-                  'sample=sample:main',
-              ],
-          },
+      packages=['dmr_utils'],
+      #packages=find_packages()
      )
