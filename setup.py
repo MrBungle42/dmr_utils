@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 def readme():
     with open('README.rst') as file:
         return file.read()
 
-setup(name='dmr',
+setup(name='dmr_utils',
       version='0.1.2',
       description='ETSI DMR (Digital Mobile Radio) Teir II Utilities',
       long_description='Modules to disassemble and assemble DMR packets, including generating and decoding varoius FEC routines',
@@ -24,7 +24,13 @@ setup(name='dmr',
       keywords='dmr radio digital fec ecc mmdvm ham amateur radio',
       author='Cortney T. Buffington, N0MJS',
       author_email='n0mjs@me.com',
-      url='https://www.python.org/sigs/distutils-sig/',
       install_requires=['bitarray'],
-      license='GPLv3'
+      license='GPLv3',
+      url='https://github.com/n0mjs710/dmr_utils',
+      packages=find_packages(),
+      entry_points={
+              'console_scripts': [
+                  'sample=sample:main',
+              ],
+          },
      )
