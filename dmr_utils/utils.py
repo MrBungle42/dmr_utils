@@ -95,19 +95,56 @@ def mk_id_dict(_path, _file):
         with open(_path+_file, 'rU') as _handle:
             ids = csv_reader(_handle, dialect='excel', delimiter=',')
             for row in ids:
-                dict[int(row[0])] = (row[1])
+                dict[int(row[0])] = {'CALLSIGN': (row[1]), 'NAME': (row[2]), 'CITY': (row[3]), 'STATE': (row[4]), 'COUNTRY':(row[5])}
             _handle.close
             return dict
     except IOError:
         return dict
 
+# These are kept for legacy purposes; They only return a callsign
 def get_info(_id, _dict):
     if _id in _dict:
-        return _dict[_id]
+        return _dict[_id]['CALLSIGN']
     return _id
 
 def get_alias(_id, _dict):
     _int_id = int_id(_id)
     if _int_id in _dict:
-        return _dict[_int_id]
+        return _dict[_int_id]['CALLSIGN']
     return _int_id
+    
+def get_callsign(_id, _dict):
+    if type(_id) != int:
+        _id = int_id(_id)
+    if _id in _dict:
+        return _dict[_id]['CALLSIGN']
+    return _id
+    
+def get_name(_id, _dict):
+    if type(_id) != int:
+        _id = int_id(_id)
+    if _id in _dict:
+        return _dict[_id]['NAME']
+    return _id
+    
+def get_call_name(_id, _dict):
+    if type(_id) != int:
+        _id = int_id(_id)
+    if _id in _dict:
+        return _dict[_id]['CALLSIGN'] + ', ' + _dict[_id]['NAME']
+    return _id
+    
+def get_alias_list(_id, _dict, *args):
+    if type(_id) != int:
+        _id = int_id(_id)
+    retValue = [_id,]
+    if _id in _dict:
+        if args:
+            for _item in args:
+                retValue.append(_dict[_id][_item])
+        else:
+            retValue = retValue + [_dict[_id]['CALLSIGN'], _dict[_id]['NAME'], _dict[_id]['CITY'], _dict[_id]['STATE'], _dict[_id]['COUNTRY']]
+        return retValue
+    return retValue
+    
+    
