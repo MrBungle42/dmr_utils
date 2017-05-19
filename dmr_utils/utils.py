@@ -117,15 +117,16 @@ def mk_full_id_dict(_path, _file):
 # These are kept for legacy purposes; They only return a callsign
 def get_info(_id, _dict):
     if _id in _dict:
-        return _dict[_id]['CALLSIGN']
+        return _dict[_id]
     return _id
 
 def get_alias(_id, _dict):
     _int_id = int_id(_id)
     if _int_id in _dict:
-        return _dict[_int_id]['CALLSIGN']
+        return _dict[_int_id]
     return _int_id
-    
+
+# These do not work yet, don't use them.
 def get_callsign(_id, _dict):
     if type(_id) != int:
         _id = int_id(_id)
