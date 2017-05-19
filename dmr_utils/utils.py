@@ -95,6 +95,19 @@ def mk_id_dict(_path, _file):
         with open(_path+_file, 'rU') as _handle:
             ids = csv_reader(_handle, dialect='excel', delimiter=',')
             for row in ids:
+                dict[int(row[0])] = (row[1])
+            _handle.close
+            return dict
+    except IOError:
+        return dict
+        
+def mk_full_id_dict(_path, _file):
+    dict = {}
+    try:
+        with open(_path+_file, 'rU') as _handle:
+            ids = csv_reader(_handle, dialect='excel', delimiter=',')
+            for row in ids:
+                print(repr(row[0]), repr(row[1]), row[3], row[4])
                 dict[int(row[0])] = {'CALLSIGN': (row[1]), 'NAME': (row[2]), 'CITY': (row[3]), 'STATE': (row[4]), 'COUNTRY':(row[5])}
             _handle.close
             return dict
