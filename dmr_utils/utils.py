@@ -39,7 +39,7 @@ __email__      = 'n0mjs@me.com'
 # CONSTANTS
 SUB_FIELDS   = ('ID', 'CALLSIGN', 'NAME', 'CITY', 'STATE', 'COUNTRY', 'TYPE')
 PEER_FIELDS  = ('ID', 'CALLSIGN', 'CITY', 'STATE', 'COUNTRY', 'FREQ', 'CC', 'OFFSET', 'TYPE', 'LINKED', 'TRUSTEE', 'INFO', 'OTHER', 'NETWORK', )
-TGID_FIELDS  = ('TGID', 'NAME')
+TGID_FIELDS  = ('ID', 'NAME')
 
 
 #************************************************
